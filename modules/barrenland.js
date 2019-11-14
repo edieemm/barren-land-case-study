@@ -168,6 +168,11 @@ const processInput = (array) => {
 }
 
 
+// --------------TO RUN IN THE TERINAL-------------//
+// enter the input as a parameter in the function below
+// in the terminal, run:
+// ~$ npm start
+
 processInput(input2)
 
 module.exports = processInput;
