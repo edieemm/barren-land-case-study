@@ -1,16 +1,19 @@
+// these can be changed to try the problem in other dimensions
 const totalWidth = 400;
 const totalHeight = 600;
-const wholeField = [0, 0, totalWidth - 1, totalHeight - 1];
 
+// these inputs are available to be tested in the console by calling processInput(input#) at the bottom of the document
 const input1 = ["0 292 399 307"]
 const input2 = ["48 192 351 207", "48 392 351 407", "120 52 135 547", "260 52 275 547"]
 
+// these were used to test out smaller scale models
 const input3 = ["0 8 14 13"]
 const input4 = ["4 2 6 18", "10 2 12 18", "2 6 13 8", "2 12 13 14"]
 
+// full field coordinates to build initial matrix
+const wholeField = [0, 0, totalWidth - 1, totalHeight - 1];
 
-
-// given 2 coordinates, this function builds a 2D array
+// given coordinates, this function builds a 2D array
 buildMatrix = ([x1, y1, x2, y2], bool) => {
     let matrix = []
     for (let x = x1; x < x2 + 1; x++) {
@@ -28,13 +31,12 @@ buildMatrix = ([x1, y1, x2, y2], bool) => {
     return matrix;
 }
 
-// builds a matrix of the entire field marking each cell as fertile 
+// builds a matrix of the entire field marking each cell as fertile initially
 createTotalFieldMatrix = () => {
     return buildMatrix(wholeField, true);
 }
 
-//converts an array of strings with spaces into it
-//to an array of arrays (splitting at each space)
+//converts an array of strings (containing spaces) to an array of arrays splitting at each space
 const stringsToArrays = (array) => {
     let listOfBarrenCoords = [];
     for (let i = 0; i < array.length; i++) {
@@ -44,7 +46,7 @@ const stringsToArrays = (array) => {
     return listOfBarrenCoords;
 }
 
-// takes in a set of rectangles of barren land and maps them to total land
+// takes in a set of rectangles of barren land and marks them on the matrix of total land
 // returns a matrix of the field that includes fertile and barren land
 const mapBarrenLandToField = (array) => {
     let arrayOfCoords = stringsToArrays(array);// converts string coords to array of coords separating at each space: ' '
@@ -61,8 +63,7 @@ const mapBarrenLandToField = (array) => {
     return field;
 }
 
-// takes in a matrix of the land including barren and fertile areas
-// returns the total barren land
+// takes in a matrix of the field a condition and returns the total area (in meters) of land that fits the condition
 const totalArea = (field, attribute, condition) => {
     let area = 0;
     field.forEach(column => {
@@ -107,7 +108,7 @@ const fillInArea1 = (matrix, x, y, count) => {
     return field;
 }
 
-// 
+// final attempt to solve problem using BFS (Breadth First Search)
 const fillInArea2 = (matrix, coordX, coordY, count) => {
     let field = matrix;
     let x = coordX;
@@ -140,6 +141,10 @@ const fillInArea2 = (matrix, coordX, coordY, count) => {
     }
     return field;
 }
+
+// function to call to process input to output
+// logs the output in the terminal (node) or browser console (vanilla js)
+// returns an object containing the output array ("output"), and the total area of fertile land in the field ("fertileArea")
 const processInput = (array) => {
     let field = mapBarrenLandToField(array);
     let uoListOfOutputs = []
@@ -156,11 +161,10 @@ const processInput = (array) => {
     }
     uoListOfOutputs.sort(function (a, b) { return a - b }); // sorts in ascending order
     console.log(uoListOfOutputs)
-    return uoListOfOutputs;
-
-    // console.log(totalArea(field, 'fertile', true), totalArea(field, 'fertile', false), totalArea(field, 'checked', 0), area(wholeField) - totalArea(field, 'checked', 0))
-    // console.log(sum(uoListOfOutputs), totalArea(field, 'fertile', true))
-
+    return {
+        output: uoListOfOutputs,
+        fertileArea: totalArea(field, 'fertile', true)
+    };
 }
 
 
