@@ -4,8 +4,7 @@ I chose the Barren Land Analysis problem because the mathematical challenge intr
 I wrote the problem in JavaScript because I am most comfortable in the language. I also chose to write it in Node.js, which allows me to write server-side JavaScript. Although I could have written JavaScript to log in a browser console, or render on a DOM, I felt that those were skills in which I have a broad portfolio to demonstrate (REFERENCE). Node.js gave me a simple structure to receive quick feedback while I worked through the mathematical problem. 
 
 Being someone who is very visual (although not great at drawing…), I sketched out the examples to help me understand the problem: 
-    ![Input 1](./input1.jpg)
-    ![Input 2](./input2.jpg)
+    ![Input 1](./input1.jpg) ![Input 2](./input2.jpg)
 
 From here I could lay the groundwork of how I would structure my data. I generated a 2 dimensional array, where each item was a JavaScript object containing values for “x” (int), “y” (int), “fertile”(boolean), and “checked”(integer where 0  = not yet checked, 1 = belongs to the first area, 2 = belongs to the second area, etc.). 
 
