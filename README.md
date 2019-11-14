@@ -2,25 +2,24 @@
 
 ## To Run the Code
 
-Requirements: 
+###Requirements: 
 
 Node v10.15.3 or later (https://nodejs.org/en/)
 MacOS Terminal, or terminal access in your IDE
 
-
-To start:
+###To start:
 
 ~$ npm install
 
-
-To test:
+###To test:
 
 ~$ npm run test
 
+###To run a specific input in the terminal:
 
-To run a specific input in the terminal:
 Follow instructions on line 171 of barrenland.js
 
+## Notes
 
 ### Why Barren Land?
 
@@ -45,3 +44,5 @@ Finally, I remembered a time in class where we rewrote recursive functions using
 ### Testing
 
 To test my results, I used a JavaScript testing framework called Jest. I wrote two tests. The first one tests for the known inputs and outputs provided in the case study document. The second one checks whether the total area of fertle land is equal to the sum of all outputs. 
+
+![Test](./test.png)
