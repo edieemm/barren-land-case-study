@@ -1,19 +1,14 @@
-const totalWidth = 90;
-const totalHeight = 90;
+const totalWidth = 400;
+const totalHeight = 600;
 const wholeField = [0, 0, totalWidth - 1, totalHeight - 1];
-const input1 = ["0 8 14 13"]
-const input2 = ["4 2 6 18", "10 2 12 18", "2 6 13 8", "2 12 13 14"]
 
-const area = ([a, b, c, d]) => {
-    return (d - b + 1) * (c - a + 1)
-}
-const sum = (array) => {
-    let sum = 0
-    array.forEach(number => {
-        sum += number;
-    })
-    return sum
-}
+const input1 = ["0 292 399 307"]
+const input2 = ["48 192 351 207", "48 392 351 407", "120 52 135 547", "260 52 275 547"]
+
+const input3 = ["0 8 14 13"]
+const input4 = ["4 2 6 18", "10 2 12 18", "2 6 13 8", "2 12 13 14"]
+
+
 
 // given 2 coordinates, this function builds a 2D array
 buildMatrix = ([x1, y1, x2, y2], bool) => {
@@ -80,6 +75,9 @@ const totalArea = (field, attribute, condition) => {
     return area;
 }
 
+
+// Initial attempt at using recursion
+// maxed out at around 90x90 grid
 const fillInArea1 = (matrix, x, y, count) => {
     let field = matrix;
     // check area to the right
@@ -109,31 +107,36 @@ const fillInArea1 = (matrix, x, y, count) => {
     return field;
 }
 
-const fillInArea2 = (matrix, x, y, count) => {
+// 
+const fillInArea2 = (matrix, coordX, coordY, count) => {
     let field = matrix;
-    // check area to the right
-    if (field[x + 1] && field[x + 1][y].checked === 0 && field[x + 1][y].fertile) {
-        // console.log(field[x + 1][y])
-        field[x + 1][y].checked = count;
-        fillInArea2(field, x + 1, y, count)
-    }
-    // check area to the left
-    if (field[x - 1] && field[x - 1][y].checked === 0 && field[x - 1][y].fertile) {
-        // console.log(field[x - 1][y])
-        field[x - 1][y].checked = count;
-        fillInArea2(field, x - 1, y, count)
-    }
-    // check area above
-    if (field[x][y + 1] && field[x][y + 1].checked === 0 && field[x][y + 1].fertile) {
-        // console.log(field[x][y + 1])
-        field[x][y + 1].checked = count;
-        fillInArea2(field, x, y + 1, count)
-    }
-    // check area below
-    if (field[x][y - 1] && field[x][y - 1].checked === 0 && field[x][y - 1].fertile) {
-        // console.log(field[x][y - 1])
-        field[x][y - 1].checked = count;
-        fillInArea2(field, x, y - 1, count)
+    let x = coordX;
+    let y = coordY
+    let queue = [];
+    queue.push(field[x][y])
+    while (queue.length > 0) {
+        fieldxy = queue.pop();
+        fieldxy.checked = count;
+        x = fieldxy.x;
+        y = fieldxy.y;
+
+        if (field[x + 1] && field[x + 1][y].checked === 0 && field[x + 1][y].fertile) {
+            queue.push(field[x + 1][y])
+        }
+        // check area to the left
+        if (field[x - 1] && field[x - 1][y].checked === 0 && field[x - 1][y].fertile) {
+            queue.push(field[x - 1][y])
+
+        }
+        // check area above
+        if (field[x][y + 1] && field[x][y + 1].checked === 0 && field[x][y + 1].fertile) {
+            queue.push(field[x][y + 1])
+
+        }
+        // check area below
+        if (field[x][y - 1] && field[x][y - 1].checked === 0 && field[x][y - 1].fertile) {
+            queue.push(field[x][y - 1])
+        }
     }
     return field;
 }
@@ -161,6 +164,6 @@ const processInput = (array) => {
 }
 
 
-processInput(input2) 
+processInput(input2)
 
 module.exports = processInput;
