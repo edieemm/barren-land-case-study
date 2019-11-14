@@ -32,7 +32,7 @@ I wrote the problem in JavaScript because I am most comfortable in the language.
 ### The Process
 Being someone who is very visual (although not great at drawing…), I sketched out the examples to help me understand the problem: 
 
-    ![Input 1](./input1.png) ![Input 2](./input2.png)
+![Input 1](./input1.png) ![Input 2](./input2.png)
 
 From here I could lay the groundwork of how I would structure my data. I generated a 2 dimensional array, where each item was a JavaScript object containing values for “x” (int), “y” (int), “fertile”(boolean), and “checked”(integer where 0  = not yet checked, 1 = belongs to the first area, 2 = belongs to the second area, etc.). 
 
