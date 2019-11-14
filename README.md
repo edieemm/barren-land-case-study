@@ -2,20 +2,20 @@
 
 ## To Run the Code
 
-###Requirements: 
+### Requirements: 
 
 Node v10.15.3 or later (https://nodejs.org/en/)
 MacOS Terminal, or terminal access in your IDE
 
-###To start:
+### To start:
 
 ~$ npm install
 
-###To test:
+### To test:
 
 ~$ npm run test
 
-###To run a specific input in the terminal:
+### To run a specific input in the terminal:
 
 Follow instructions on line 171 of barrenland.js
 
