@@ -17,7 +17,7 @@ MacOS Terminal, or terminal access in your IDE
 
 ### To run a specific input in the terminal:
 
-Follow instructions on line 171 of barrenland.js
+Follow instructions on line 160 of barrenland.js
 
 ## Notes
 
@@ -30,7 +30,7 @@ I chose the Barren Land Analysis problem because the mathematical challenge intr
 I wrote the problem in JavaScript because I am most comfortable in the language. I also chose to write it in Node.js, which allows me to write server-side JavaScript. Although I could have written JavaScript to log in a browser console, or render on a DOM, I felt that those were skills in which I have an existing portfolio to demonstrate if needed. Node.js gave me a simple structure to receive quick feedback while I worked through the mathematical problem. 
 
 ### The Process
-Being someone who is very visual (although not great at drawing…), I sketched out the examples to help me understand the problem: 
+Being someone who is very visual (although not great at drawing…), I sketched out the examples and made manual calculations to help me understand the problem: 
 
 ![Input 1](./input1.png) ![Input 2](./input2.png)
 
