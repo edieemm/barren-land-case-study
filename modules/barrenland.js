@@ -160,7 +160,7 @@ const processInput = (array) => {
         }
     }
     uoListOfOutputs.sort(function (a, b) { return a - b }); // sorts in ascending order
-    console.log(uoListOfOutputs)
+    console.log('OUTPUT: ', uoListOfOutputs)
     return {
         output: uoListOfOutputs,
         fertileArea: totalArea(field, 'fertile', true)
@@ -169,9 +169,14 @@ const processInput = (array) => {
 
 
 // --------------TO RUN IN THE TERINAL-------------//
+
 // enter the input as a parameter in the function below
+// the input should be formatted as an array of strings where each string has the coordinates
+// of the rectangle of barren land as given in the case study problem i.e. ["48 192 351 207", "48 392 351 407"]
+
 // in the terminal, run:
 // ~$ npm start
+// the output will log in the terminal
 
 processInput(input2)
 
