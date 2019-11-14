@@ -23,11 +23,11 @@ Follow instructions on line 171 of barrenland.js
 
 ### Why Barren Land?
 
-I chose the Barren Land Analysis problem because the mathematical challenge intrigued me. I have demonstrated my technical ability in writing RESTful APIs on my GitHub account, (REFERENCE THEM HERE) however, I have limited experience in writing algorithms. I felt that tackling an unfamiliar intellectual challenge would offer more insight into my problem solving process. I learned a lot while working on this case study. 
+I chose the Barren Land Analysis problem because the mathematical challenge intrigued me. I have existing evidence of my experience writing RESTful APIs, however, I have limited exposure to writing algorithms. I felt that tackling an unfamiliar intellectual challenge would offer more insight into my problem solving process. I learned a lot while working on this case study. 
 
 ### Framework: Node.js
 
-I wrote the problem in JavaScript because I am most comfortable in the language. I also chose to write it in Node.js, which allows me to write server-side JavaScript. Although I could have written JavaScript to log in a browser console, or render on a DOM, I felt that those were skills in which I have a broad portfolio to demonstrate (REFERENCE). Node.js gave me a simple structure to receive quick feedback while I worked through the mathematical problem. 
+I wrote the problem in JavaScript because I am most comfortable in the language. I also chose to write it in Node.js, which allows me to write server-side JavaScript. Although I could have written JavaScript to log in a browser console, or render on a DOM, I felt that those were skills in which I have an existing portfolio to demonstrate if needed. Node.js gave me a simple structure to receive quick feedback while I worked through the mathematical problem. 
 
 ### The Process
 Being someone who is very visual (although not great at drawing…), I sketched out the examples to help me understand the problem: 
